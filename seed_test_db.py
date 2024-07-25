@@ -6,7 +6,7 @@ import os
 def seed_database():
     from app import app  # Move the import statement here
     load_dotenv()  # Load environment variables from .env file
-    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('TEST_DATABASE_URL')
     with app.app_context():
         db.drop_all()
         db.create_all()
@@ -26,9 +26,7 @@ def seed_database():
 
         db.session.add_all([c1, c2])
         db.session.commit()
-        print("Seeded the database with initial data.")
-
-
+        
 if __name__ == "__main__":
     seed_database()
     print("Database seeding completed.")

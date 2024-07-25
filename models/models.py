@@ -5,7 +5,6 @@ db = SQLAlchemy()
 
 DEFAULT_IMAGE = "https://tinyurl.com/demo-cupcake"
 
-
 class Cupcake(db.Model):
     """Cupcake."""
 
@@ -27,7 +26,6 @@ class Cupcake(db.Model):
             "size": self.size,
             "image": self.image,
         }
-
 
 def connect_db(app):
     """Connect this database to provided Flask app. You should call this in your Flask app."""

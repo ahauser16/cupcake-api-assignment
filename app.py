@@ -22,9 +22,6 @@ connect_db(app)
 with app.app_context():
     db.create_all()
 
-# Call the seed_database function to seed the database
-seed_database()
-
 
 @app.route("/")
 def root():
